@@ -3,22 +3,17 @@
 Ganymede Documentation
 ====================================
 
-Another simple header
-=====================
-
-here is some text exmplaining some very complicated stuff.::
-
-    print 'hello'
-    >> hello
-
-Guide
-^^^^^
-
 .. toctree::
    :maxdepth: 3
 
-   license
-   help
+   Ganymede-Training-v2
+   Connecting-To-Ganymede
+   Moving-Around-Ganymede
+   Ganymede-Space-Constraints
+   Ganymede-Compilers-And-Modules
+   Running-Jobs-On-Ganymede
+   Application-Specific-Instructions
+   Appendices
 
 
 

@@ -1,0 +1,357 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4 - Ganymede Compilers and Modules &mdash; Ganymede 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'',
+              VERSION:'2.0',
+              LANGUAGE:'',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="next" title="5 - Running Jobs on Ganymede" href="Running-Jobs-On-Ganymede.html" />
+    <link rel="prev" title="3 - Ganymede Space Constraints" href="Ganymede-Space-Constraints.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Ganymede
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Training-v2.html">UTDallas HPC Cluster Users Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Connecting-To-Ganymede.html">1 - Connecting to Ganymede</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Moving-Around-Ganymede.html">2 - Moving around Ganymede</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Space-Constraints.html">3 - Ganymede Space Constraints</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">4 - Ganymede Compilers and Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modules">4.1 - Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#displaying-loaded-modules">4.1.1 - Displaying Loaded Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#listing-available-modules">4.1.2 - Listing Available Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-modules-to-a-user-s-account">4.1.3 - Adding Modules to a User&#8217;s Account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-modules-from-your-account">4.1.4 - Removing Modules From Your Account</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#compilers">4.2 - Compilers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#list-available-compilers-and-mpi-stacks">4.2.1 - List Available Compilers and MPI Stacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changing-currently-loaded-compilers-or-mpi-stacks">4.2.2 - Changing Currently Loaded Compilers or MPI Stacks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Running-Jobs-On-Ganymede.html">5 - Running Jobs on Ganymede</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Application-Specific-Instructions.html">6 - Application Specific Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendices.html">Appendices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ganymede</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>4 - Ganymede Compilers and Modules</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Ganymede-Compilers-And-Modules.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="systemname-compilers-and-modules">
+<h1>4 - Ganymede Compilers and Modules<a class="headerlink" href="#systemname-compilers-and-modules" title="Permalink to this headline">¶</a></h1>
+<p>The compilers, MPI stacks, and environmental modules are all considered modules.  All environmental functionality are controlled by the modules system.</p>
+<div class="section" id="modules">
+<h2>4.1 - Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>Modules allow the user to set up an environment in the way that best fits their needs. Many of the modules are cross compiled with a number of different compilers to give the HPC cluster a large amount of flexibility.  If you notice a module that you would like installed but is not, please send an email to <a class="reference external" href="mailto:ganymedeadmins&#37;&#52;&#48;utdallas&#46;edu">ganymedeadmins<span>&#64;</span>utdallas<span>&#46;</span>edu</a>.</p>
+<div class="section" id="displaying-loaded-modules">
+<h3>4.1.1 - Displaying Loaded Modules<a class="headerlink" href="#displaying-loaded-modules" title="Permalink to this headline">¶</a></h3>
+<p>The first step a user should follow is to display the modules that are currently loaded by their account.  This is done using the <tt class="docutils literal"><span class="pre">module</span> <span class="pre">list</span></tt> command.</p>
+<div class="highlight-python"><pre>[jxw150830@ganymede~]$ module list
+
+Currently Loaded Modules:
+  1) autotools   2) prun/1.2   3) intel/18.0.2.199   4) mvapich2/2.2   5) ohpc</pre>
+</div>
+<p>Notice that each of the modules is shown along with the version has been compiled for that program.</p>
+</div>
+<div class="section" id="listing-available-modules">
+<h3>4.1.2 - Listing Available Modules<a class="headerlink" href="#listing-available-modules" title="Permalink to this headline">¶</a></h3>
+<p>The user can list the modules that have been loaded into their account, but with the different dependencies that are available for each of these modules.</p>
+<div class="highlight-python"><pre>[jxw150830@ganymede~]$ module avail
+
+------------------------------------------------ /opt/ohpc/pub/moduledeps/intel-mvapich2 ------------------------------------------------
+ adios/1.13.0    mfem/3.3.2              netcdf/4.5.0     ptscotch/6.0.4      scalasca/2.3.1    superlu_dist/5.3.0
+ boost/1.66.0    mumps/5.1.2             petsc/3.8.3      py2-mpi4py/3.0.0    scorep/3.1        tau/2.27
+ hypre/2.13.0    netcdf-cxx/4.3.0        phdf5/1.10.1     py3-mpi4py/3.0.0    sionlib/1.7.1     trilinos/12.12.1
+ imb/2018.1      netcdf-fortran/4.4.4    pnetcdf/1.8.1    scalapack/2.0.2     slepc/3.8.2
+
+---------------------------------------------------- /opt/ohpc/pub/moduledeps/intel -----------------------------------------------------
+ hdf5/1.10.1        likwid/4.3.1    mpich/3.2.1         ocr/1.0.1         pdtoolkit/3.25    py2-numpy/1.14.2    scotch/6.0.4
+ impi/2018.2.199    metis/5.1.0     mvapich2/2.2 (L)    openmpi3/3.0.0    plasma/2.8.0      py3-numpy/1.14.2    superlu/5.2.1
+
+------------------------------------------------------- /opt/ohpc/pub/modulefiles -------------------------------------------------------
+ anaconda2/5.1.0        cplex/12.8.0    intel/18.0.2.199 (L)    pmix/2.1.1               valgrind/3.13.0
+ autotools       (L)    gnu7/7.3.0      ohpc             (L)    prun/1.2          (L)
+ cmake/3.10.2           gurobi/8.0.0    papi/5.6.0              singularity/2.4.5
+
+  Where:
+   L:  Module is loaded
+
+Use &quot;module spider&quot; to find all possible modules.
+Use &quot;module keyword key1 key2 ...&quot; to search for all possible modules matching any of the &quot;keys&quot;.</pre>
+</div>
+</div>
+<div class="section" id="adding-modules-to-a-user-s-account">
+<h3>4.1.3 - Adding Modules to a User&#8217;s Account<a class="headerlink" href="#adding-modules-to-a-user-s-account" title="Permalink to this headline">¶</a></h3>
+<p>A number of modules exist that are not initially loaded into the user&#8217;s account.  The first step in finding a module that the user wants is to search for it using the <tt class="docutils literal"><span class="pre">spider</span></tt> command. To list all available packages, type <tt class="docutils literal"><span class="pre">module</span> <span class="pre">spider</span></tt>.  To search more specifically, type <tt class="docutils literal"><span class="pre">module</span> <span class="pre">spider</span> <span class="pre">&lt;name</span> <span class="pre">of</span> <span class="pre">software</span> <span class="pre">package&gt;</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830@ganymede~]$ module spider py2
+
+-----------------------------------------------------------------------------------
+  py2-mpi4py:
+-----------------------------------------------------------------------------------
+    Description:
+      Python bindings for the Message Passing Interface (MPI) standard.
+
+     Versions:
+        py2-mpi4py/3.0.0
+
+&lt;...output continues...&gt;</pre>
+</div>
+<p>Now that the correct version and name has been found, the next step is to load the desired module or modules to the user&#8217;s account, using <tt class="docutils literal"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">&lt;modulename&gt;</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830@ganymede~]$ module load py2-mpi4py
+[jxw150830@ganymede~]$ module list
+
+Currently Loaded Modules:
+  1) autotools   2) prun/1.2   3) intel/18.0.2.199   4) mvapich2/2.2   5) ohpc   6) py2-mpi4py/3.0.0</pre>
+</div>
+<p>Now the desired module has been added to the environment.</p>
+</div>
+<div class="section" id="removing-modules-from-your-account">
+<h3>4.1.4 - Removing Modules From Your Account<a class="headerlink" href="#removing-modules-from-your-account" title="Permalink to this headline">¶</a></h3>
+<p>When the user no longer needs a module, the module can be removed, or unloaded, by using the command <tt class="docutils literal"><span class="pre">module</span> <span class="pre">unload</span> <span class="pre">&lt;modulename&gt;</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830@ganymede ~]$ module unload py2-mpi4py/3.0.0
+[jxw150830@ganymede~]$ module list
+
+Currently Loaded Modules:
+  1) autotools   2) prun/1.2   3) intel/18.0.2.199   4) mvapich2/2.2   5) ohpc</pre>
+</div>
+</div>
+</div>
+<div class="section" id="compilers">
+<h2>4.2 - Compilers<a class="headerlink" href="#compilers" title="Permalink to this headline">¶</a></h2>
+<p>Along with being pre-loaded with substantial compilers and mpi stacks, Ganymede provides the ability to change currently loaded compilers and MPI stacks.</p>
+<div class="section" id="list-available-compilers-and-mpi-stacks">
+<h3>4.2.1 - List Available Compilers and MPI Stacks<a class="headerlink" href="#list-available-compilers-and-mpi-stacks" title="Permalink to this headline">¶</a></h3>
+<p>Ganymede is pre-loaded with the following compilers:</p>
+<ul class="simple">
+<li>Intel</li>
+<li>GNU7</li>
+</ul>
+<p>Ganymede is pre-loaded with the following mpi stacks:</p>
+<ul class="simple">
+<li>mvapich2</li>
+<li>impi</li>
+<li>mpich</li>
+<li>openmpi3</li>
+</ul>
+<p>Note that the each of the mpi stacks are cross built to allow them to work with the available compilers.  The default compiler is <strong>Intel</strong> and the default mpi stack is <strong>mvapich2</strong>.</p>
+<p>Upon noticing a compiler or MPI stack that is needed, the user is encouraged to reach out to <a class="reference external" href="mailto:ganymedeadmins&#37;&#52;&#48;utdallas&#46;edu">ganymedeadmins<span>&#64;</span>utdallas<span>&#46;</span>edu</a> for further instructions on adding the desired compilers or stacks.</p>
+</div>
+<div class="section" id="changing-currently-loaded-compilers-or-mpi-stacks">
+<h3>4.2.2 - Changing Currently Loaded Compilers or MPI Stacks<a class="headerlink" href="#changing-currently-loaded-compilers-or-mpi-stacks" title="Permalink to this headline">¶</a></h3>
+<p>The current loaded compiler or MPI stack can be changed, or swapped, as needed to meet the programmers needs.  The command to this is <tt class="docutils literal"><span class="pre">module</span> <span class="pre">swap</span> <span class="pre">&lt;current</span> <span class="pre">compiler&gt;</span> <span class="pre">&lt;new</span> <span class="pre">compiler&gt;</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830@ganymede ~]$ module swap intel/18.0.2.199 gnu7/7.3.0
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) mvapich2/2.2</pre>
+</div>
+<p>Now the intel compiler is unloaded in the environment and the GNU7 compiler has been loaded. The mvapich2 module was automatically changed to run with the new compiler.</p>
+<p>The user is also able to swap the loaded mpi stack without changing the current compiler.  The command to do this is the same as above, with the diffence being the mpi stacks as the passed inputs <tt class="docutils literal"><span class="pre">module</span> <span class="pre">swap</span> <span class="pre">&lt;current</span> <span class="pre">mpistack&gt;</span> <span class="pre">&lt;new</span> <span class="pre">mpistack&gt;</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830@ganymede jxw150830$ module list
+
+Currently Loaded Modules:
+  1) autotools   2) prun/1.2   3) intel/18.0.2.199   4) mvapich2/2.2   5) ohpc
+
+[jxw150830@ganymede jxw150830]$ module swap mvapich2/2.2 impi
+[jxw150830@ganymede jxw150830]$ module list
+
+Currently Loaded Modules:
+  1) autotools   2) prun/1.2   3) intel/18.0.2.199   4) ohpc   5) impi/2018.2.199
+
+[jxw150830@ganymede jxw150830]$</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Running-Jobs-On-Ganymede.html" class="btn btn-neutral float-right" title="5 - Running Jobs on Ganymede" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Ganymede-Space-Constraints.html" class="btn btn-neutral float-left" title="3 - Ganymede Space Constraints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, OIT HPC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

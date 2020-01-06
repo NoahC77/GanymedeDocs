@@ -1,0 +1,486 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5 - Running Jobs on Ganymede &mdash; Ganymede 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'',
+              VERSION:'2.0',
+              LANGUAGE:'',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="next" title="6 - Application Specific Instructions" href="Application-Specific-Instructions.html" />
+    <link rel="prev" title="4 - Ganymede Compilers and Modules" href="Ganymede-Compilers-And-Modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Ganymede
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Training-v2.html">UTDallas HPC Cluster Users Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Connecting-To-Ganymede.html">1 - Connecting to Ganymede</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Moving-Around-Ganymede.html">2 - Moving around Ganymede</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Space-Constraints.html">3 - Ganymede Space Constraints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Compilers-And-Modules.html">4 - Ganymede Compilers and Modules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">5 - Running Jobs on Ganymede</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparing-to-queue-a-task">5.1 - Preparing to Queue a Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#queuing-a-task">5.2 - Queuing a Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#serial-task">5.2.1 - Serial Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parallel-tasks">5.2.2 - Parallel Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-on-a-running-task">5.3 - Checking on a Running Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-mpi-with-slurm-and-gdb">5.4 Debugging MPI with Slurm and gdb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-interactive-jobs">5.5 - Running Interactive Jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-one-time-instance-jobs">5.5.1 - Running One-Time Instance Jobs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-persistent-jobs">5.5.2 - Running Persistent Jobs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging-into-a-particular-node">5.5.3 - Logging into a Particular Node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-results">5.6 - Viewing Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Application-Specific-Instructions.html">6 - Application Specific Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendices.html">Appendices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ganymede</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>5 - Running Jobs on Ganymede</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Running-Jobs-On-Ganymede.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-jobs-on-systemname">
+<h1>5 - Running Jobs on Ganymede<a class="headerlink" href="#running-jobs-on-systemname" title="Permalink to this headline">¶</a></h1>
+<p><strong>What is Slurm</strong></p>
+<blockquote>
+<div>Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. Slurm requires no kernel modifications for it&#8217;s operation and is relatively self-contained. Slurm has a centralized manager to monitor resources and work. There may also be a backup manager to assume those responsibilities in the event of failure.</div></blockquote>
+<div class="section" id="preparing-to-queue-a-task">
+<h2>5.1 - Preparing to Queue a Task<a class="headerlink" href="#preparing-to-queue-a-task" title="Permalink to this headline">¶</a></h2>
+<p>Before the user can queues a task, the user should check and see the status of cluster.  This is done by running the command <tt class="docutils literal"><span class="pre">sinfo</span></tt>. By doing this, the user can see what resources are available.</p>
+<div class="highlight-python"><pre>[jxw150830@ganymede ~]$ sinfo
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+debug        up    2:00:00      2   idle compute-6-9-[0-1]
+normal*      up 4-00:00:00      4  down* compute-7-2-[14,16],compute-7-6-[23,25]
+normal*      up 4-00:00:00     50  alloc compute-6-9-[2-39],compute-7-2-[0-2,10-13,15,17-20]
+normal*      up 4-00:00:00     40   idle compute-7-2-[3-9,21-39],compute-7-3-[32-39],compute-7-6-[24,26-30]</pre>
+</div>
+<p>In the example above, there are 96 nodes in the cluster.  The different states describe the nodes.  The nodes that are <tt class="docutils literal"><span class="pre">alloc</span></tt> are currently running tasks and are unavailable at this time.  The nodes that are <tt class="docutils literal"><span class="pre">idle</span></tt> are available to be used and the nodes that are <tt class="docutils literal"><span class="pre">down</span></tt> are down for service or because of an error.  Currently, if the user were to schedule a task, the idle nodes would be used first to process the queued task.  If all of the nodes are allocated, then Slurm steps in and will queue the job and process it as resources become available.</p>
+<p>It is worth noting there are currently 2 debug nodes that allow the user to compile software and to test out the code that is to be run on the main worker nodes.  This means that the user can queue a process knowing that it will run instead of waiting for the queue to run their process only to find it does not work. <strong>Debugging/ Prototying should never be done on the normal nodes</strong>.  The following is an example of a test script that the user user should following in debugging.</p>
+<div class="highlight-python"><pre> [jxw150830@ganymede Linux]$ cat chessjob.sh
+ #!/bin/bash
+ #SBATCH --ntasks=1
+ #SBATCH --time=00:01:00
+ #SBATCH --mail-user=jxw150830@utdallas.edu
+ #SBATCH --mail-type=ALL
+ #SBATCH -p debug
+
+ cd /home/jxw150830/scratch/stockfish-9-linux/Linux
+ ./chessrun
+[jxp180019@ganymede Linux]$</pre>
+</div>
+<p>Line 1 is the required bash script setup. Line 2 sets of the number of cores, which should be 1 since all users can only access 2 debug nodes.  The next line is the time to run, which is a minute.  The amount of time should be long enough for to ensure that the program works, but no longer.  In this case, a minute was enough to know that no errors had occured.</p>
+</div>
+<div class="section" id="queuing-a-task">
+<h2>5.2 - Queuing a Task<a class="headerlink" href="#queuing-a-task" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have done the preoperative tasks, it is time to queue a task.  To queue a task with Slurm, the request should be submitted as a shell script.  A number of attributes that are Slurm directives need to be established in order to queue the job.  There are two major types of tasks, serial and parallel.</p>
+<div class="section" id="serial-task">
+<h3>5.2.1 - Serial Task<a class="headerlink" href="#serial-task" title="Permalink to this headline">¶</a></h3>
+<p>The following is a simple serial task template for the operating script.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ cat job.serial
+#!/bin/bash
+
+#SBATCH -J test               # Job name
+#SBATCH -o job.%j.out         # Name of stdout output file (%j expands to jobId)
+#SBATCH -N 1                  # Total number of nodes requested
+#SBATCH -n 1                  # Total number of mpi tasks requested
+#SBATCH -t 01:30:00           # Run time (hh:mm:ss) - 1.5 hours
+
+# Launch serial code
+
+echo &quot;this is serial code&quot;
+sleep 10</pre>
+</div>
+<p>In the example above the user submitted a job named <tt class="docutils literal"><span class="pre">job.serial</span></tt>. It will send the user an email when the job starts and finishes. The job is submitted to <em>1 compute node</em> and asked for <em>1 core</em> in that node. If the user requires more cores, more nodes may be used (ex: user requests 35 cores &#64; 16 cores per node, they get 3 nodes.)  The output of the program will go to <tt class="docutils literal"><span class="pre">job.&lt;JobID&gt;.out</span></tt> file. While this choice is arbitrary, if the user intends to export these to Windows, the best file output would be .txt . When the user submits the job, this file will be created for the user in their home directory. The choose partition <tt class="docutils literal"><span class="pre">normal</span></tt> and the user&#8217;s account is <tt class="docutils literal"><span class="pre">jxw150830</span></tt>. Note that the <strong>partition name is case sensitive</strong>. The optional command <tt class="docutils literal"><span class="pre">sleep</span> <span class="pre">10</span></tt> is used just for example purposes. It says wait another 10 seconds before ending the job.  For a complete listing of slurm commands, see Appendix B - Slurm Commands.</p>
+</div>
+<div class="section" id="parallel-tasks">
+<h3>5.2.2 - Parallel Tasks<a class="headerlink" href="#parallel-tasks" title="Permalink to this headline">¶</a></h3>
+<p>Parallel tasks use mpi technology to run multiple tasks at a time.  The script to submit an MPI script is similar to the serial, but there are some differences.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ cat job.mpi
+#!/bin/bash
+
+#SBATCH -J test               # Job name
+#SBATCH -o job.%j.out         # Name of stdout output file (%j expands to jobId)
+#SBATCH -N 2                  # Total number of nodes requested
+#SBATCH -n 16                 # Total number of mpi tasks requested
+#SBATCH -t 01:30:00           # Run time (hh:mm:ss) - 1.5 hours
+
+# Launch MPI-based executable
+
+prun ./a.out</pre>
+</div>
+<p>Once the user has set up the file, the user can submit the job to the Slurm batch that will apply to the system using <tt class="docutils literal"><span class="pre">sbatch</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ sbatch job.serial
+Submitted batch job 405</pre>
+</div>
+<p>This informs the user of the job number.  The user will also receive an email from <a class="reference external" href="mailto:slurm&#37;&#52;&#48;ganymede&#46;utdallas&#46;edu">slurm<span>&#64;</span>ganymede<span>&#46;</span>utdallas<span>&#46;</span>edu</a> informing that the job has started.  If the user ever forgets the job number, or has logged into Ganymede to determine if and which jobs are running, the user can type the command <tt class="docutils literal"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></tt>.  This will show all current running tasks to the user, with the first number being the Job ID.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ squeue -u $USER
+  JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+    405    normal     test jxw15083  R       0:01      1 compute-7-2-21</pre>
+</div>
+<p>If the user runs <tt class="docutils literal"><span class="pre">squeue</span></tt> without the additional command, the queue total queue for the cluster will be displayed.</p>
+</div>
+</div>
+<div class="section" id="checking-on-a-running-task">
+<h2>5.3 - Checking on a Running Task<a class="headerlink" href="#checking-on-a-running-task" title="Permalink to this headline">¶</a></h2>
+<p>Once the task is running, the user may want to check on the progress of the task.  This can be done by using the command <tt class="docutils literal"><span class="pre">sstat</span> <span class="pre">--format=AveCPU,AvePages,AveRSS,AveVMSize,JobID</span> <span class="pre">-j</span> <span class="pre">&lt;JobID&gt;</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ sstat --format=AveCPU,AvePages,AveRSS,AveVMSize,JobID -j 405
+    AveCPU   AvePages     AveRSS  AveVMSize        JobID
+---------- ---------- ---------- ---------- ------------
+ 00:00.000          0       362K      4372K 405.0</pre>
+</div>
+<p>For those interested in very detailed analysis, running the command <tt class="docutils literal"><span class="pre">scontrol</span> <span class="pre">show</span> <span class="pre">job</span> <span class="pre">--d</span> <span class="pre">&lt;JobID&gt;</span></tt> with the job number will give the user a listing that is very specific about how the job is being executed.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ scontrol show job --d 405
+JobId=405 JobName=test
+   UserId=jxw150830(532471) GroupId=oithpc(1100) MCS_label=N/A
+   Priority=4294901737 Nice=0 Account=(null) QOS=(null)
+   JobState=COMPLETED Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   DerivedExitCode=0:0
+   RunTime=00:00:10 TimeLimit=01:30:00 TimeMin=N/A
+   SubmitTime=2018-05-31T16:06:29 EligibleTime=2018-05-31T16:06:29
+   StartTime=2018-05-31T16:06:29 EndTime=2018-05-31T16:06:39 Deadline=N/A
+   PreemptTime=None SuspendTime=None SecsPreSuspend=0
+   LastSchedEval=2018-05-31T16:06:29
+   Partition=normal AllocNode:Sid=ganymede:449124
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=compute-7-2-21
+   BatchHost=compute-7-2-21
+   NumNodes=1 NumCPUs=16 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=16,node=1,billing=16
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   Nodes=compute-7-2-21 CPU_IDs=0-15 Mem=0 GRES_IDX=
+   MinCPUsNode=1 MinMemoryNode=0 MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   Gres=(null) Reservation=(null)
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/home/jxw150830/job.serial
+   WorkDir=/home/jxw150830
+   StdErr=/home/jxw150830/job.405.out
+   StdIn=/dev/null
+   StdOut=/home/jxw150830/job.405.out
+   Power=</pre>
+</div>
+<p>If at any time the user wants to cancel a job, the user should execute <tt class="docutils literal"><span class="pre">scancel</span> <span class="pre">&lt;JobID&gt;</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ sbatch sampletask.sh
+Submitted batch job 380
+[jxw150830 ~]$ scancel 380
+[jxw150830 ~]$</pre>
+</div>
+<p>If there are no issues, there will be a clean output in the terminal and the job will disappear from the queue.</p>
+</div>
+<div class="section" id="debugging-mpi-with-slurm-and-gdb">
+<h2>5.4 Debugging MPI with Slurm and gdb<a class="headerlink" href="#debugging-mpi-with-slurm-and-gdb" title="Permalink to this headline">¶</a></h2>
+<p>When the user is running a MPI task, it is important to debug properly.  Because the amount of data that can be dumped is greater than the quota for the home directory, special care must be taken in order for the user to sucessfully fix code.  The user needs to first ssh into Ganymede using the following command:</p>
+<div class="highlight-python"><pre>jwhite-swift@hpc-rca:~$ ssh -X jxw150830@ganymede.utdallas.edu
+jxw150830@ganymede.utdallas.edu&#x27;s password:
+Last login: Tue Jun  5 10:26:09 2018 from 10.21.4.24
+Disk quotas for user jxw150830:
+====================    ============    ================        ============
+Disk                    Usage           Soft Limit              Hard Limit
+====================    ============    ================        ============
+/home/jxw150830         8248K           20000M                  30000M
+====================    ============    ================        ============
+[jxw150830 ~]$</pre>
+</div>
+<p>Note that the command is <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">-X</span> <span class="pre">&lt;NetID&gt;&#64;ganymede.utdallas.edu</span></tt>.  The <tt class="docutils literal"><span class="pre">-X</span></tt> allows the user to pass visual windows back through, which will become important later.</p>
+<p>Once logged into Ganymede, the user must first get a reservation on a <strong>debug</strong> compute node.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ salloc -p debug -N1 -n4 --time=00:30:00
+salloc: Granted job allocation 620
+Disk quotas for user jxw150830:
+====================    ============    ================        ============
+Disk                    Usage           Soft Limit              Hard Limit
+====================    ============    ================        ============
+/home/jxw150830         8248K           20000M                  30000M
+====================    ============    ================        ============
+[jxw150830 ~]$</pre>
+</div>
+<p>This command asks for 1 node and 4 cores on the node in the debug partition for 30 minutes.  The number of cores can be adjusted as required.</p>
+<p>To find out the current user&#8217;s node, the user then inputs <tt class="docutils literal"><span class="pre">showq</span> <span class="pre">–u</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ squeue -u $USER
+           JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+             620     debug     bash jxw15083  R       4:55      1 CNChapter5.4</pre>
+</div>
+<p>Then the user will ssh into that node and turn on X forwarding, just as the user did when accessing the Ganymede node to begin with.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ ssh -X CNChapter5.4
+Warning: Permanently added &#x27;CNChapter5.4,10.182.224.70&#x27; (ECDSA) to the list of known hosts.
+[jxw150830@CNChapter5.4 ~]$</pre>
+</div>
+<p>Now that the user is on the debug node, the user needs to run the following command: <tt class="docutils literal"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">4</span> <span class="pre">xterm</span> <span class="pre">-e</span> <span class="pre">gdb</span> <span class="pre">&lt;my_mpi_application&gt;</span></tt></p>
+<img alt="./assets/5.4.png" src="./assets/5.4.png" />
+<p>This will then produce 4 screens (or the number specified by <tt class="docutils literal"><span class="pre">np</span></tt>) that allow the user to debug each of the instances that are running using MPI, without having to core dump extremely large files</p>
+<p>In order for this to work, the user needs to be running some form of an X server locally. If the user is on a linux machine, this functionality will be out of the box. If you are on a Mac, you’ll need XQuartz. If you are on a windows machine, you should use MobaXterm.  These programs are discribed in Section 1 - Connecting to Ganymede.</p>
+</div>
+<div class="section" id="running-interactive-jobs">
+<h2>5.5 - Running Interactive Jobs<a class="headerlink" href="#running-interactive-jobs" title="Permalink to this headline">¶</a></h2>
+<p>Interactive Jobs can be run by the user on the individual compute nodes.  This is done by running a slurm command that places the user onto a compute node or nodes.  This then allows a user to run commands on the compute nodes.</p>
+<div class="section" id="running-one-time-instance-jobs">
+<h3>5.5.1 - Running One-Time Instance Jobs<a class="headerlink" href="#running-one-time-instance-jobs" title="Permalink to this headline">¶</a></h3>
+<p>If the user is interested in only running for the instance in the compute node (i.e. logged off when the session is finished, then the user should use <tt class="docutils literal"><span class="pre">srun</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ srun -n1 -N1 --pty /bin/bash
+[jxw150830 ~]$</pre>
+</div>
+<p>The user is now logged into the compute node.  Notice that the <tt class="docutils literal"><span class="pre">-n1</span></tt> denotes 1 task (or CPU) and the <tt class="docutils literal"><span class="pre">-N1</span></tt> denotes 1 node is being used.  The rest of the command sets up the machine to be interacted with. If the node is currently in use, the user will be placed in a queue and the command will hang until the user is granted access.  Once the user has finished using the resources, the user needs to type <tt class="docutils literal"><span class="pre">exit</span></tt> to exit the compute node.</p>
+<div class="highlight-python"><pre>[[jxw150830] ~]$ exit
+exit
+[jxw150830 ~]$</pre>
+</div>
+<p>Once executed, the session is closed and the user moves back to the Ganymede node.</p>
+</div>
+<div class="section" id="running-persistent-jobs">
+<h3>5.5.2 - Running Persistent Jobs<a class="headerlink" href="#running-persistent-jobs" title="Permalink to this headline">¶</a></h3>
+<p>If the user is interested in running a task that can needs to be logged in and out of multiple times, the user should allocate some time on a node or nodes using <tt class="docutils literal"><span class="pre">salloc</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ salloc -n1 -N1 -t 1:00:00
+salloc: Granted job allocation 607
+Disk quotas for user jxw150830:
+====================    ============    ================        ============
+Disk                    Usage           Soft Limit              Hard Limit
+====================    ============    ================        ============
+/home/jxw150830         7420K           20000M                  30000M
+====================    ============    ================        ============
+[jxw150830 ~]$</pre>
+</div>
+<p>The user in this example allocated <tt class="docutils literal"><span class="pre">-n1</span></tt> for 1 processor and <tt class="docutils literal"><span class="pre">-N1</span></tt> for 1 node.  The <tt class="docutils literal"><span class="pre">-t</span> <span class="pre">1:00:00</span></tt> sets the allocation to 1 hour.  Now that the user has allocated the node, the user needs to find the compute node number by <tt class="docutils literal"><span class="pre">running</span> <span class="pre">squeue</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ squeue -u $USER
+           JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+             607    normal     bash jxw15083  R       3:46      1 CNChapter5.5.5</pre>
+</div>
+<p>Now that the compute node number is known, the user can ssh into the node to work. Note: users can only ssh into nodes that have been allocated for them.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ ssh CNChapter5.5.5
+Warning: Permanently added &#x27;CNChapter5.5.5,10.182.224.72&#x27; (ECDSA) to the list of known hosts.
+[jxw150830@CNChapter5.5.5 ~]$</pre>
+</div>
+<p>Now that the user is in the node, the user is free to come and go to do work for the duration of the allocation.</p>
+<div class="highlight-python"><pre>[jxw150830@CNChapter5.5.5 ~]$ exit
+logout
+Connection to CNChapter5.5.5 closed.
+[jxw150830 ~]$ ssh CNChapter5.5.5
+[jxw150830@CNChapter5.5.5 ~]$</pre>
+</div>
+</div>
+<div class="section" id="logging-into-a-particular-node">
+<h3>5.5.3 - Logging into a Particular Node<a class="headerlink" href="#logging-into-a-particular-node" title="Permalink to this headline">¶</a></h3>
+<p>There are times when it is advantageous for the user to work on a particular node.  This may be for a particular scipt or some other program that is loaded on a particular set of nodes, or to use the particular node because of hardware.  To do this, the user must us the command <tt class="docutils literal"><span class="pre">salloc</span> <span class="pre">-w</span> <span class="pre">&lt;computenode&gt;</span></tt>.  If the node is free, the user will encounter the following output:</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ salloc -w CNChapter5.5.3
+salloc: Granted job allocation 611
+Disk quotas for user jxw150830:
+====================    ============    ================        ============
+Disk                    Usage           Soft Limit              Hard Limit
+====================    ============    ================        ============
+/home/jxw150830         7424K           20000M                  30000M
+====================    ============    ================        ============
+[jxw150830 ~]$ ssh CNChapter5.5.3
+Warning: Permanently added &#x27;CNChapter5.5.3,10.182.224.204&#x27; (ECDSA) to the list of known hosts.
+[jxw150830@CNChapter5.5.3 ~]$</pre>
+</div>
+<p>and if the node is in use, the user will see:</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ salloc -w compute-6-9-3
+salloc: Pending job allocation 608
+salloc: job 608 queued and waiting for resources</pre>
+</div>
+<p>The user will then have to wait until the node becomes available.</p>
+</div>
+</div>
+<div class="section" id="viewing-results">
+<h2>5.6 - Viewing Results<a class="headerlink" href="#viewing-results" title="Permalink to this headline">¶</a></h2>
+<p>Once the job is done, the user will receive an email from <a class="reference external" href="mailto:slurm&#37;&#52;&#48;ganymede&#46;utdallas&#46;edu">slurm<span>&#64;</span>ganymede<span>&#46;</span>utdallas<span>&#46;</span>edu</a> alerting the user that the job has been completed. Any interaction between the user and the nodes that the user were logged into will be be closed and the user will be returned to the home folder.  The file will be in that directory.  If there are any errors that occur, those will be captured in the output file that is created by the system.  This is especially useful when running on the debugging nodes.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ ls
+html  job.405.out  job.mpi  job.serial  sampletask.sh  scratch
+[jxw150830 ~]$ cat job.405.out
+this is serial code</pre>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Application-Specific-Instructions.html" class="btn btn-neutral float-right" title="6 - Application Specific Instructions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Ganymede-Compilers-And-Modules.html" class="btn btn-neutral float-left" title="4 - Ganymede Compilers and Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, OIT HPC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

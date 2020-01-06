@@ -1,0 +1,301 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6 - Application Specific Instructions &mdash; Ganymede 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'',
+              VERSION:'2.0',
+              LANGUAGE:'',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="next" title="Appendices" href="Appendices.html" />
+    <link rel="prev" title="5 - Running Jobs on Ganymede" href="Running-Jobs-On-Ganymede.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Ganymede
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Training-v2.html">UTDallas HPC Cluster Users Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Connecting-To-Ganymede.html">1 - Connecting to Ganymede</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Moving-Around-Ganymede.html">2 - Moving around Ganymede</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Space-Constraints.html">3 - Ganymede Space Constraints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Compilers-And-Modules.html">4 - Ganymede Compilers and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Running-Jobs-On-Ganymede.html">5 - Running Jobs on Ganymede</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">6 - Application Specific Instructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#matlab">6.1 - Matlab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#job-types">6.1.1 - Job Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#serial-jobs">6.1.1.1 - Serial Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parallel-computing-toolkit-pct-jobs">6.1.1.2 - Parallel Computing Toolkit (PCT) Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distributed-compute-server-dcs-jobs">6.1.1.3 - Distributed Compute Server (DCS) Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#matlab-job-modes">6.1.2 - Matlab Job Modes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#batch-jobs">6.1.2.1 - Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interactive-matlab">6.1.2.2 - Interactive Matlab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Appendices.html">Appendices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ganymede</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>6 - Application Specific Instructions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Application-Specific-Instructions.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="application-specific-instructions">
+<h1>6 - Application Specific Instructions<a class="headerlink" href="#application-specific-instructions" title="Permalink to this headline">¶</a></h1>
+<p>There are certain programs that require users to run them by a specific method.  These can be added with modules as with other programs on the stack.</p>
+<div class="section" id="matlab">
+<h2>6.1 - Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
+<p>Ganymede currently has r2018a installed, and in addition to the site liscense there are 32 liscenses for distributed Matlab.  Matlab jobs can be run in 3 different ways: serial, parallel and distributed compute.  Each of these job types can either be batch or interactive.  The following sections will describe what this means to the user.</p>
+<div class="section" id="job-types">
+<h3>6.1.1 - Job Types<a class="headerlink" href="#job-types" title="Permalink to this headline">¶</a></h3>
+<p>There are 3 different job types: Serial, Parallel Computing Toolkit, and Distibuted Compute Server.</p>
+<div class="section" id="serial-jobs">
+<h4>6.1.1.1 - Serial Jobs<a class="headerlink" href="#serial-jobs" title="Permalink to this headline">¶</a></h4>
+<p>Serial jobs are defined as jobs where one dataset exists in memory.  This can either be accessed by one processor or by multiple processors.  Serial jobs are created when a user runs standard Matlab scripts.</p>
+<p>For an example of a serial job, the user can look in the directory <tt class="docutils literal"><span class="pre">/opt/ohpc/pub/examples/matlab/serial/</span></tt> and open the readme file.</p>
+</div>
+<div class="section" id="parallel-computing-toolkit-pct-jobs">
+<h4>6.1.1.2 - Parallel Computing Toolkit (PCT) Jobs<a class="headerlink" href="#parallel-computing-toolkit-pct-jobs" title="Permalink to this headline">¶</a></h4>
+<p>Parallel Computing Toolkit jobs are jobs that use openmp to call parallel processes using MPI.  These jobs follow directives that are established in the Matlab Parallel Computing Toolkit with full information available at <a class="reference external" href="https://www.mathworks.com/products/parallel-computing.html">https://www.mathworks.com/products/parallel-computing.html</a> . The user has the availabity to run an instance of Matlab with each of the cores reserved in the current node.  Ganymede is equiped with 12,000 keys to ensure that many users can do parallel computing at once.</p>
+<p>For an example of a serial job, the user can look in the directory <tt class="docutils literal"><span class="pre">/opt/ohpc/pub/examples/matlab/parallel/</span></tt> and open the readme file.</p>
+</div>
+<div class="section" id="distributed-compute-server-dcs-jobs">
+<h4>6.1.1.3 - Distributed Compute Server (DCS) Jobs<a class="headerlink" href="#distributed-compute-server-dcs-jobs" title="Permalink to this headline">¶</a></h4>
+<p>Distributed Compute Server jobs are very similar to PCT jobs, but these jobs leverage systems within Matlab to use multiple nodes to work on jobs instead of multiple instances as in PCT.  The user must use internal commands to Matlab to enable this, however Matlab automatically pulls the corret liscense type for the command run by the user.  The University currently owns 32 liscenses.  The default number that are run is 12, however the user can change the number of units run using the following code in their code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">myCluster</span>  <span class="o">=</span> <span class="n">parcluster</span><span class="p">();</span>
+<span class="n">poolobj</span> <span class="o">=</span> <span class="n">parpool</span><span class="p">(</span><span class="n">myCluster</span><span class="p">,</span><span class="mi">32</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="matlab-job-modes">
+<h3>6.1.2 - Matlab Job Modes<a class="headerlink" href="#matlab-job-modes" title="Permalink to this headline">¶</a></h3>
+<p>Like all Slurm jobs, Matlab can either be run in the background with <tt class="docutils literal"><span class="pre">sbatch</span></tt> or interactively with <tt class="docutils literal"><span class="pre">srun</span></tt>.  The user does, however, need to do some specific actions for matlab to work.</p>
+<div class="section" id="batch-jobs">
+<h4>6.1.2.1 - Batch Jobs<a class="headerlink" href="#batch-jobs" title="Permalink to this headline">¶</a></h4>
+<p>Using Slurm, an effecient way to run Matlab allows to user to set up a number of batches to run at the same time across multiple cores.  This means that if the user has the same program to run with multiple data sets, it is possible to batch the same program with multiple data sets.  This allows the system to run the multiple sets in tandem, yielding faster results.</p>
+<p>To do this, the submission script needs to be stuctured like the one in Section 5.2.1 with the program section being replaced by <tt class="docutils literal"><span class="pre">matlab</span> <span class="pre">-nodisplay</span> <span class="pre">-nosplash</span> <span class="pre">&lt;user</span> <span class="pre">function&gt;.m</span> <span class="pre">&lt;&lt;</span> <span class="pre">&lt;input&gt;</span></tt></p>
+</div>
+<div class="section" id="interactive-matlab">
+<h4>6.1.2.2 - Interactive Matlab<a class="headerlink" href="#interactive-matlab" title="Permalink to this headline">¶</a></h4>
+<p>Matlab can be run from an interactive terminal on a single compute node.  This is useful for users who want to tweak inputs as they go, or want to feed in live data.  See section 5.4 for how to log into a node.  Once logged in, the user needs to load the Matlab module.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ module load matlab</pre>
+</div>
+<p>Once the user has added the module, executing `` `` will start matlab interactively.  This normally takes a few moments.</p>
+<div class="highlight-python"><pre>[jxw150830 ~]$ matlab
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                          &lt; M A T L A B (R) &gt;
+                Copyright 1984-2018 The MathWorks, Inc.
+                 R2018a (9.4.0.813654) 64-bit (glnxa64)
+                           February 23, 2018
+
+
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+
+&gt;&gt; %%-- 06/04/18 01:33:51 PM --%%
+&gt;&gt;</pre>
+</div>
+<p>Once the Matlab terminal is loaded, the user can execute Matlab functions a usual.  When finished, the user should exit from the Matlab terminal and the compute node.</p>
+<div class="highlight-python"><pre>&gt;&gt; exit
+[jxw150830 ~]$ exit
+exit
+[jxw150830 ~]$</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Appendices.html" class="btn btn-neutral float-right" title="Appendices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Running-Jobs-On-Ganymede.html" class="btn btn-neutral float-left" title="5 - Running Jobs on Ganymede" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, OIT HPC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1 - Connecting to Ganymede &mdash; Ganymede 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'',
+              VERSION:'2.0',
+              LANGUAGE:'',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="next" title="2 - Moving around Ganymede" href="Moving-Around-Ganymede.html" />
+    <link rel="prev" title="UTDallas HPC Cluster Users Guide" href="Ganymede-Training-v2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Ganymede
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Training-v2.html">UTDallas HPC Cluster Users Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">1 - Connecting to Ganymede</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#microsoft-windows">1.1 - Microsoft Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#putty">1.1.1 - PuTTY:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bitvise">1.1.2 - Bitvise:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mobaxterm">1.1.3 - MobaXTerm:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#for-mac-users">1.2 - For Mac Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#for-linux-users">1.3 - For Linux Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mailing-list">1.4 - Mailing List</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Moving-Around-Ganymede.html">2 - Moving around Ganymede</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Space-Constraints.html">3 - Ganymede Space Constraints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Compilers-And-Modules.html">4 - Ganymede Compilers and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Running-Jobs-On-Ganymede.html">5 - Running Jobs on Ganymede</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Application-Specific-Instructions.html">6 - Application Specific Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendices.html">Appendices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ganymede</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>1 - Connecting to Ganymede</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Connecting-To-Ganymede.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="connecting-to-systemname">
+<h1>1 - Connecting to Ganymede<a class="headerlink" href="#connecting-to-systemname" title="Permalink to this headline">¶</a></h1>
+<p>It is important to note that the individual nodes can only be accessed after the user has logged into the Ganymede node, and have a running job on compute nodes.</p>
+<div class="section" id="microsoft-windows">
+<h2>1.1 - Microsoft Windows<a class="headerlink" href="#microsoft-windows" title="Permalink to this headline">¶</a></h2>
+<p>Once the user&#8217;s account has been created the user can access Ganymede using multiple Secure Shell (SSH) terminal software such as:</p>
+<ul class="simple">
+<li>PuTTY</li>
+<li>Bitwise</li>
+<li>MobaXterm</li>
+</ul>
+<p>This guide is written from the prospective that the user is connected to the UT Dallas network.  If the user is working outside of the UT Dallas network, follow the VPN guide at <a class="reference external" href="https://www.utdallas.edu/oit/vpn/">https://www.utdallas.edu/oit/vpn/</a> or to connect via the command line the SSH guide at <a class="reference external" href="https://www.utdallas.edu/oit/howto/create-an-ssh-connection/">https://www.utdallas.edu/oit/howto/create-an-ssh-connection/</a>  to connect to the campus securely.</p>
+<div class="section" id="putty">
+<h3>1.1.1 - PuTTY:<a class="headerlink" href="#putty" title="Permalink to this headline">¶</a></h3>
+<p>PuTTY for the Microsoft Windows environment can be installed by going to www.putty.org. Download and install the latest version of Putty.</p>
+<img alt="./assets/1.1.1-1.png" src="./assets/1.1.1-1.png" />
+<p>Once running PuTTY, in the Host Name section type <strong>CBsysname.utdallas.edu</strong>.  Go down to the saved sessions section, name the server with a meaningful name (in this case Ganymede) and press save.  By doing this, time can be saved in the future by clicking your particular saved session and pressing load.  Once loaded into the host name, click on the open button.</p>
+<img alt="./assets/1.1.1-2.jpg" src="./assets/1.1.1-2.jpg" />
+<p>A Putty Security Alert window will open for the first time prompting you for a Yes/No/Cancel answer to the question of saving a new host key. Click the Yes button and now you will be asked for login-id and password. Your login-id is your UTD NetID and your password is the same as your UTD NetID password.</p>
+<img alt="./assets/1.1.1-3.png" src="./assets/1.1.1-3.png" />
+</div>
+<div class="section" id="bitvise">
+<h3>1.1.2 - Bitvise:<a class="headerlink" href="#bitvise" title="Permalink to this headline">¶</a></h3>
+<p>Bitvise can be installed by going to <a class="reference external" href="https://www.bitvise.com/index">https://www.bitvise.com/index</a> and pressing the download tab across the top banner.  Press the first option, <strong>Download Bitvise SSH Client (Tunnelier)</strong> the press <strong>Bitvise SSH Client Installer</strong> and follow the instructions for to install the software. Similar to PuTTY, the Host Name section type <strong>CBsysname.utdallas.edu</strong>.  Go down to the &#8220;Save profile as&#8221; button, name the file with a meaningful name (in this case ganymede.tlp) and press save.  By doing this, time can be saved in the future by clicking &#8220;Load profile&#8221;.  Once loaded into the host name, click on the Login button.</p>
+<img alt="./assets/1.1.2.png" src="./assets/1.1.2.png" />
+</div>
+<div class="section" id="mobaxterm">
+<h3>1.1.3 - MobaXTerm:<a class="headerlink" href="#mobaxterm" title="Permalink to this headline">¶</a></h3>
+<p>MobaXterm can be installed from <a class="reference external" href="http://mobaxterm.mobatek.net/download.html">http://mobaxterm.mobatek.net/download.html</a>. The program can be demo-ed from site <a class="reference external" href="http://mobaxterm.mobatek.net/demo.html">http://mobaxterm.mobatek.net/demo.html</a>.</p>
+<p>To login, type <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">&lt;NetID&gt;&#64;ganymede.utdallas.edu</span></tt>. Once logged in, all of the available Linux files and directory information will be displayed on the left white pane. Within the MobaXterm interface, one can securely copy files between Linux and Windows desktops.  To open a file, right click on it and choosing option &#8220;open with default text editor&#8221;. Changes can then be made to a file and the changes can then be saved.</p>
+<img alt="./assets/1.1.3.png" src="./assets/1.1.3.png" />
+</div>
+</div>
+<div class="section" id="for-mac-users">
+<h2>1.2 - For Mac Users<a class="headerlink" href="#for-mac-users" title="Permalink to this headline">¶</a></h2>
+<p>For MAC users MobaXterm is not available.  Install XQuartz from <a class="reference external" href="https://www.xquartz.org">https://www.xquartz.org</a>. Additionally, the user could use terminal application as an SSH terminal client.</p>
+</div>
+<div class="section" id="for-linux-users">
+<h2>1.3 - For Linux Users<a class="headerlink" href="#for-linux-users" title="Permalink to this headline">¶</a></h2>
+<p>For Linux users, the ssh command is built into the operating system.  To connect to the Ganymede server, open the terminal agent and type: <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">&lt;NET-ID&gt;&#64;ganymede.utdallas.edu.</span></tt></p>
+</div>
+<div class="section" id="mailing-list">
+<h2>1.4 - Mailing List<a class="headerlink" href="#mailing-list" title="Permalink to this headline">¶</a></h2>
+<p>Another way for users to connect to Ganymede is to connect with other users.  The admin team has set up a mailing list that can allow users to interact with each other and find solutions through searchable archives.  Because the admins are members of the group, timely answers and solutions pass through the group.  The users should think of this as an additional form of documentation to reference.  This list can be accessed at <a class="reference external" href="mailto:ganymedeusers&#37;&#52;&#48;lists&#46;utdallas&#46;edu">ganymedeusers<span>&#64;</span>lists<span>&#46;</span>utdallas<span>&#46;</span>edu</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Moving-Around-Ganymede.html" class="btn btn-neutral float-right" title="2 - Moving around Ganymede" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Ganymede-Training-v2.html" class="btn btn-neutral float-left" title="UTDallas HPC Cluster Users Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, OIT HPC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

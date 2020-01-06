@@ -1,0 +1,495 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2 - Moving around Ganymede &mdash; Ganymede 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'',
+              VERSION:'2.0',
+              LANGUAGE:'',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="next" title="3 - Ganymede Space Constraints" href="Ganymede-Space-Constraints.html" />
+    <link rel="prev" title="1 - Connecting to Ganymede" href="Connecting-To-Ganymede.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Ganymede
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Training-v2.html">UTDallas HPC Cluster Users Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Connecting-To-Ganymede.html">1 - Connecting to Ganymede</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2 - Moving around Ganymede</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linux-commands">2.1 - Linux Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#moving-around">2.1.1 - Moving Around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#making-files-and-directories">2.1.2 - Making Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moving-files-and-directories">2.1.3 - Moving Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-files-and-directories">2.1.4 - Removing Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-and-editing-files">2.1.5 - Viewing and Editing Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automating-commands">2.1.6 - Automating Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#systemname-specific-instructions-and-programs">2.2 - Ganymede Specific Instructions and Programs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#environmental-variables">2.2.1 - Environmental Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-programs">2.2.2 - Custom Programs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Space-Constraints.html">3 - Ganymede Space Constraints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ganymede-Compilers-And-Modules.html">4 - Ganymede Compilers and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Running-Jobs-On-Ganymede.html">5 - Running Jobs on Ganymede</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Application-Specific-Instructions.html">6 - Application Specific Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendices.html">Appendices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ganymede</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>2 - Moving around Ganymede</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Moving-Around-Ganymede.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="moving-around-systemname">
+<h1>2 - Moving around Ganymede<a class="headerlink" href="#moving-around-systemname" title="Permalink to this headline">¶</a></h1>
+<p>Now that the user is logged in, lets navigate around Ganymede using Linux shell commands:</p>
+<div class="section" id="linux-commands">
+<h2>2.1 - Linux Commands<a class="headerlink" href="#linux-commands" title="Permalink to this headline">¶</a></h2>
+<p>A basic knowledge of Linux commands is required to effectively use the Ganymede system. If you have basic knowledge of Linux Commands and Shell Scripting, feel free to skip this section. Note that a condensed version of useful Linux Commands can be found in Appendix A.</p>
+<div class="section" id="moving-around">
+<h3>2.1.1 - Moving Around<a class="headerlink" href="#moving-around" title="Permalink to this headline">¶</a></h3>
+<p>First, it is important to know where one is in the system in order to move around to desired directories (sometimes called folders).  The first function prints the working (current) directory.</p>
+<div class="highlight-python"><pre>{pubssh:~/home} pwd
+/home/013/j/jx/jxw150830/home</pre>
+</div>
+<p>The next step is to see what folders exist in the home directory, in order to know where to move around.  The fastest way to do this is to use <tt class="docutils literal"><span class="pre">ls</span></tt>, the list command.</p>
+<div class="highlight-python"><pre>{pubssh:~/home} ls
+Documents  Downloads  real.log</pre>
+</div>
+<p>The list command has additional functionality that allows for long form to give more information about the files and folders that exist on the server by running <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-l</span></tt>.</p>
+<div class="highlight-python"><pre>{pubssh:~/home} ls -l
+total 4
+drwx--x--x+ 4 jxw150830 ee 5 May 21  2018 Documents
+drwx--x--x+ 2 jxw150830 ee 2 May 21 11:05 Downloads
+-rw-------+ 1 jxw150830 ee 0 May 21  2018 real.log</pre>
+</div>
+<p>There are a couple of things worth noting.  The first set of letters show the permissions of the different files and directories.  In fact, the Linux environment treats everything as a file, with the only difference in the directory having the d on the first line.  Because of this, files can be saved with any extension of any length.</p>
+<p>Sometimes it is useful to see what is in another directory while not moving out of the current directory; this can be achieved by asking the list function to go somewhere else.</p>
+<div class="highlight-python"><pre>{pubssh:~/home} ls Documents/
+Old-Photos  Research  Sample.txt</pre>
+</div>
+<p>Now that possible directories to move into have been identified, the next step is to move into one.  This is done by changing the directory, or <tt class="docutils literal"><span class="pre">cd</span></tt>.</p>
+<div class="highlight-python"><pre>{pubssh:~/home} cd Documents/
+{pubssh:~/home/Documents}</pre>
+</div>
+<p>The next logical step is to list what items are in the directory.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents} ls
+Old-Photos  Research  Sample.txt</pre>
+</div>
+<p>Note that the only difference between this listing and the listing of this directory from before was that the user had to move to the directory to get the listing in the second case.</p>
+<p>The next example will show how to move into a directory, list the contents, and then back out using the <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">..</span></tt> command.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents} cd Research/
+{pubssh:~/home/Documents/Research} ls
+datafile.dat
+{pubssh:~/home/Documents/Research} cd ..
+{pubssh:~/home/Documents} ls
+Old-Photos  Research  Sample.txt</pre>
+</div>
+</div>
+<div class="section" id="making-files-and-directories">
+<h3>2.1.2 - Making Files and Directories<a class="headerlink" href="#making-files-and-directories" title="Permalink to this headline">¶</a></h3>
+<p>Now that the user can move around, next is to make files and directories.  First, to create a new file in <tt class="docutils literal"><span class="pre">/home/Documents/Research</span></tt>, we will move into <tt class="docutils literal"><span class="pre">/Research</span></tt> and create the file using the <tt class="docutils literal"><span class="pre">touch</span></tt> command.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents/Research} touch project-day1
+{pubssh:~/home/Documents/Research} ls
+datafile.dat  project-day1</pre>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">touch</span></tt> command can also be used to create multiple files at a time, with or without file extensions.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents/Research} touch project-day2 project-day3 bigdata.dat
+{pubssh:~/home/Documents/Research} ls
+bigdata.dat  datafile.dat  project-day1  project-day2  project-day3</pre>
+</div>
+<p>The function to make directories, <tt class="docutils literal"><span class="pre">mkdir</span></tt>, is very similar to <tt class="docutils literal"><span class="pre">touch</span></tt>.  A single directory can be created, or multiple directories can be created if divided by spaces.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents/Research} mkdir project\ files datafiles
+{pubssh:~/home/Documents/Research} ls -l
+total 4
+-rw-------+ 1 jxw150830 ee 0 May 21 11:48 bigdata.dat
+-rw-------+ 1 jxw150830 ee 0 May 21 11:37 datafile.dat
+drwx--x--x+ 2 jxw150830 ee 2 May 21  2018 datafiles
+-rw-------+ 1 jxw150830 ee 0 May 21 11:45 project-day1
+-rw-------+ 1 jxw150830 ee 0 May 21 11:48 project-day2
+-rw-------+ 1 jxw150830 ee 0 May 21 11:48 project-day3
+drwx--x--x+ 2 jxw150830 ee 2 May 21  2018 project files</pre>
+</div>
+<p>Note that the &#8220;\ &#8221; allows the user to define spaces in naming both files and directories.</p>
+</div>
+<div class="section" id="moving-files-and-directories">
+<h3>2.1.3 - Moving Files and Directories<a class="headerlink" href="#moving-files-and-directories" title="Permalink to this headline">¶</a></h3>
+<p>Now that the user has created files and directories, it may be valuable to move them using the command <tt class="docutils literal"><span class="pre">mv</span></tt>.  To begin, we will move the data files and project files into the appropriate directories.:</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents/Research} mv datafile.dat datafiles/
+{pubssh:~/home/Documents/Research} mv -t project\ files/ project-day1 project-day2 project-day3
+{pubssh:~/home/Documents/Research} ls -Rl
+.:
+total 4
+-rw-------+ 1 jxw150830 ee 0 May 21 11:48 bigdata.dat
+drwx--x--x+ 2 jxw150830 ee 3 May 21  2018 datafiles
+drwx--x--x+ 2 jxw150830 ee 5 May 21 13:09 project files
+
+./datafiles:
+total 1
+-rw-------+ 1 jxw150830 ee 0 May 21 11:37 datafile.dat
+
+./project files:
+total 2
+-rw-------+ 1 jxw150830 ee 0 May 21 11:45 project-day1
+-rw-------+ 1 jxw150830 ee 0 May 21 11:48 project-day2
+-rw-------+ 1 jxw150830 ee 0 May 21 11:48 project-day3</pre>
+</div>
+<p>Note two things:  First is the change in the set up for doing one file <tt class="docutils literal"><span class="pre">mv</span> <span class="pre">&lt;source&gt;</span> <span class="pre">&lt;destination&gt;</span></tt> to <tt class="docutils literal"><span class="pre">mv</span> <span class="pre">-t</span> <span class="pre">&lt;destination&gt;</span> <span class="pre">&lt;source1&gt;</span> <span class="pre">&lt;source2&gt;</span> <span class="pre">&lt;sourcenth&gt;</span></tt>.  The second is that the <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-R</span></tt> command allows the user to list recursively files and directories that are upstream of the current directory.</p>
+<p>There is no specific command that is used for the renaming of files.  Instead, the user must move the file over itself with the new name.  In the following example, it will be assumed that the project-day files should have had the file extension .prj at the end.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents/Research/project files} mv project-day1 project-day1.prj
+{pubssh:~/home/Documents/Research/project files} mv project-day2 project-day2.prj
+{pubssh:~/home/Documents/Research/project files} mv project-day3 project-day3.prj
+{pubssh:~/home/Documents/Research/project files} ls
+project-day1.prj  project-day2.prj  project-day3.prj</pre>
+</div>
+<p>Moving directories is a very similar process to the moving of files.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents/Research} mv project\ files/ datafiles/
+{pubssh:~/home/Documents/Research} ls -lR
+.:
+total 2
+-rw-------+ 1 jxw150830 ee 0 May 21 11:48 bigdata.dat
+drwx--x--x+ 3 jxw150830 ee 4 May 21  2018 datafiles
+
+./datafiles:
+total 2
+-rw-------+ 1 jxw150830 ee 0 May 21 11:37 datafile.dat
+drwx--x--x+ 2 jxw150830 ee 5 May 21  2018 project files
+
+./datafiles/project files:
+total 2
+-rw-------+ 1 jxw150830 ee 0 May 21 11:45 project-day1.prj
+-rw-------+ 1 jxw150830 ee 0 May 21 11:48 project-day2.prj
+-rw-------+ 1 jxw150830 ee 0 May 21 11:48 project-day3.prj</pre>
+</div>
+<p>To move files to or from the Ganymede server, the use of secure copying is used, <tt class="docutils literal"><span class="pre">scp</span></tt>.  The method below will detail how to move a file from the Ganymede server to the user&#8217;s computer via the command line, but the process would be similar for data moving the other direction.</p>
+<div class="highlight-python"><pre>{pubssh:~} scp ./gany.sh jxw150830@ganymede.utdallas.edu:/home/jxw150830/
+jxw150830@ganymede.utdallas.edu&#x27;s password:
+gany.sh                                                    100%   51     0.1KB/s   00:00
+{pubssh:~}</pre>
+</div>
+<p>The above example is moving information from a user&#8217;s home folder on the server to the Ganymede home area.  Note that this process could go backwards as well.</p>
+<p>Another tool that is useful for keeping items up to date through remote synchronization is <tt class="docutils literal"><span class="pre">rsync</span></tt>.  The <tt class="docutils literal"><span class="pre">rsync</span></tt> command works to keep items up to date across multiple devices by updating information that has changed.  This method of keeping files up to date is more time efficient for large data sets where only minor changes are made; that is, <em>the changes, instead of the data set</em>, will be moved.</p>
+<div class="highlight-python"><pre>{pubssh:~} rsync -avtr ./dataset/ jxw150830@ganymede.utdallas.edu:/home/jxw150830/
+jxw150830@ganymede.utdallas.edu&#x27;s password:
+sending incremental file list
+./
+data1.dat
+data2.dat
+data3.dat
+
+sent 203 bytes  received 72 bytes  36.67 bytes/sec
+total size is 0  speedup is 0.00
+{pubssh:~}</pre>
+</div>
+<p>In the above example, each item is moved to Ganymede.  If the user does not want to see all of the files transferred, the user can remove <tt class="docutils literal"><span class="pre">-v</span></tt>.  Similarly, the <tt class="docutils literal"><span class="pre">-r</span></tt> is the recursive command which will go down the folder structure to extract everything.  The <tt class="docutils literal"><span class="pre">-at</span></tt> should remain for file continuity.  If the user were to run the same command again, notice that a small amount of data was sent to check for updates, but the full files were not resent.</p>
+<div class="highlight-python"><pre>{pubssh:~} rsync -avtr ./dataset/ jxw150830@ganymede.utdallas.edu:/home/jxw150830/
+jxw150830@ganymede.utdallas.edu&#x27;s password:
+sending incremental file list
+
+sent 83 bytes  received 12 bytes  12.67 bytes/sec
+total size is 0  speedup is 0.00
+{pubssh:~}</pre>
+</div>
+</div>
+<div class="section" id="removing-files-and-directories">
+<h3>2.1.4 - Removing Files and Directories<a class="headerlink" href="#removing-files-and-directories" title="Permalink to this headline">¶</a></h3>
+<p>Often times files or directories are made in error or are no longer needed.  To remove an item, you use the remove tool <tt class="docutils literal"><span class="pre">rm</span></tt>.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents/Research/datafiles} ls
+datafile.dat  project files
+{pubssh:~/home/Documents/Research/datafiles} rm datafile.dat
+rm: remove regular empty file `datafile.dat&#x27;? y
+{pubssh:~/home/Documents/Research/datafiles} ls
+project files</pre>
+</div>
+<p>Remove will not let you remove a directory that has files in it.  With one or two files, removing them is not a time-consuming issue.  However, with nested directories, this can be a very time-consuming task to empty each level before removal.  This can be worked around, however, by using the command <tt class="docutils literal"><span class="pre">rm</span> <span class="pre">-r</span></tt> (for recursive).</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents/Research} rm datafiles/
+rm: cannot remove `datafiles/&#x27;: Is a directory
+{pubssh:~/home/Documents/Research} rm -r datafiles/
+{pubssh:~/home/Documents/Research} ls
+bigdata.dat</pre>
+</div>
+</div>
+<div class="section" id="viewing-and-editing-files">
+<h3>2.1.5 - Viewing and Editing Files<a class="headerlink" href="#viewing-and-editing-files" title="Permalink to this headline">¶</a></h3>
+<p>Now that the file and directory structure are in the right place, the user has multiple options for viewing and editing.
+For viewing short files, simply using the <tt class="docutils literal"><span class="pre">cat</span> <span class="pre">&lt;filename&gt;</span></tt> command allows the user to see the file printed out in the command line.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents} cat Sample.txt
+This is a sample Document
+This document has multiple lines
+
+{pubssh:~/home/Documents}</pre>
+</div>
+<p>To view longer files, using the command <tt class="docutils literal"><span class="pre">cat</span> <span class="pre">&lt;filename&gt;</span> <span class="pre">|</span> <span class="pre">less</span></tt> allows the user to scroll through a long file.  Pressing the q key will release the user from the prompt.</p>
+<p>For editing files there are multiple options.  The programs vim (<a class="reference external" href="https://www.vim.org/">https://www.vim.org/</a>) and nano (<a class="reference external" href="https://www.nano-editor.org/">https://www.nano-editor.org/</a>) are popular projects that come fairly standard on most machines.  Beyond those, there are additional well documented programs out there that allow for the user to edit in the command line but explaining them is out of the scope of this document.</p>
+</div>
+<div class="section" id="automating-commands">
+<h3>2.1.6 - Automating Commands<a class="headerlink" href="#automating-commands" title="Permalink to this headline">¶</a></h3>
+<p>Many of the commands that have been executed, if needed to be executed over and over, would be very time consuming.  To allow for this sort of automation, including the option of user input, there is the shell script.   The bash shell script allows for the user to write programs that consist of other programs or commands that are build into the Linux environment.  The concept of this will be familiar to those users that are familiar with Matlab programming.</p>
+<p>Every shell script must have the file extension .sh and start with and have nothing else but the line: <tt class="docutils literal"><span class="pre">#!</span> <span class="pre">/bin/bash</span></tt> This is followed by the commands in the script.  The command <tt class="docutils literal"><span class="pre">echo</span></tt> is useful in scripts for printing out to the command line information about what is going on.  To run the script, run <tt class="docutils literal"><span class="pre">bash</span> <span class="pre">&lt;script</span> <span class="pre">name&gt;</span></tt>.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents} cat hw.sh
+#! /bin/bash
+# This is a comment and is useful
+echo &quot; Hello World&quot;
+{pubssh:~/home/Documents} bash hw.sh
+  Hello World</pre>
+</div>
+<p>The shell script can be a powerful tool, especially when variables are introduced.  There are two types of shell script input, those passed in the command line before hand and those begotten during the run process.
+To put in input to the command line, follow this example.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents} cat nameupfront.sh
+#! /bin/bash
+# This will get it upfront
+# from the user input
+echo &quot;Your name is: $1&quot;
+
+{pubssh:~/home/Documents} bash nameupfront.sh ganymede
+Your name is: ganymede</pre>
+</div>
+<p>To get the input during runtime, the user can read in the value of variables. These variables can be named anything the user would like, and are reached with the <tt class="docutils literal"><span class="pre">$&lt;varName&gt;</span></tt> portion of the command.</p>
+<div class="highlight-python"><pre>{pubssh:~/home/Documents} cat namelive.sh
+#! /bin/bash
+# This program asks during
+echo &quot;What is your name? :&quot;
+read name
+echo &quot;Hello $name&quot;
+
+{pubssh:~/home/Documents} bash namelive.sh
+What is your name? :
+ganymede
+Hello ganymede</pre>
+</div>
+</div>
+</div>
+<div class="section" id="systemname-specific-instructions-and-programs">
+<h2>2.2 - Ganymede Specific Instructions and Programs<a class="headerlink" href="#systemname-specific-instructions-and-programs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="environmental-variables">
+<h3>2.2.1 - Environmental Variables<a class="headerlink" href="#environmental-variables" title="Permalink to this headline">¶</a></h3>
+<p>In Ganymede, there are specific environmental varables that are designed to save the user time.  The following table shows the variables with their respective equivalent values.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Equivalent Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">$USER</span></tt></td>
+<td>The user&#8217;s NetID</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">$HOME</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">/home/$USER</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">$SCRATCH</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">/petastore/ganymede/scratch/$USER</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>These environmental variables are save the user time in typing locations.  Additionally, these can be used by the user in any shell script or command that is input.</p>
+</div>
+<div class="section" id="custom-programs">
+<h3>2.2.2 - Custom Programs<a class="headerlink" href="#custom-programs" title="Permalink to this headline">¶</a></h3>
+<p>To save time, a command has been created to directly change the user&#8217;s directory to the Scratch directory.  This command to change to scratch is <tt class="docutils literal"><span class="pre">cds</span></tt>.</p>
+<div class="highlight-python"><pre>[jxw150830@ganymede ~]$ pwd
+/home/jxw150830
+[jxw150830@ganymede ~]$ cds
+[jxw150830@ganymede jxw150830]$ pwd
+/petastore/ganymede/scratch/jxw150830
+[jxw150830@ganymedejxw150830]$</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Ganymede-Space-Constraints.html" class="btn btn-neutral float-right" title="3 - Ganymede Space Constraints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Connecting-To-Ganymede.html" class="btn btn-neutral float-left" title="1 - Connecting to Ganymede" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, OIT HPC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
